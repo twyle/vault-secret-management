@@ -50,6 +50,9 @@ vault operator init
 
 This gives you the 5 unseal keys and the root token. Store these safely.
 
+
+![](vault-init.png)
+
 ### Unseal vault
 
 Within the bash session, run this command three times, ech time supplying a different unseal key.
@@ -57,6 +60,8 @@ Within the bash session, run this command three times, ech time supplying a diff
 ```sh
 vault operator unseal
 ```
+
+![](vault-unsealed.png)
 
 ### Log into Vault
 
@@ -82,6 +87,7 @@ vault secrets enable kv
 
 ```sh
 vault kv put kv/vault-secret-management/local/flask_environment FLASK_ENV=development
+vault kv put kv/vault-secret-management/local/flask_app FLASK_APP=api/__init.py
 ```
 
 ### Read a secret at the bash session
@@ -90,8 +96,9 @@ vault kv put kv/vault-secret-management/local/flask_environment FLASK_ENV=develo
 vault kv get kv/vault-secret-management/local/flask_environment
 ```
 
-### Read a secret over HTTPS
+![](vault-read.png)
 
+### Read a secret over HTTPS
 
 ```sh
 curl \
@@ -100,6 +107,16 @@ curl \
  http://127.0.0.1:8200/v1/kv/vault-secret-management/local/flask_environment
 ```
 
+![](vault-read-https.png)
+
+### Read secrets into a .env file
+
+```sh
+chmod +x ru.sh
+./run.sh
+```
+
+This generates a .env file
 
 
 
