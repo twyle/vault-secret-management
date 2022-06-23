@@ -107,7 +107,7 @@ curl \
  http://127.0.0.1:8200/v1/kv/vault-secret-management/local/flask_environment
 ```
 
-![](vault-read-https.png)
+![](vault-https-read.png)
 
 ### Read secrets into a .env file
 
