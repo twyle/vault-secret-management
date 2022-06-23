@@ -118,5 +118,5 @@ chmod +x ru.sh
 
 This generates a .env file
 
-
+https://gist.github.com/twyle/8c707187669c8a87c2331bc257752de8
 
